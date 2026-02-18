@@ -30,6 +30,7 @@ public class CollegeController {
 	@PreAuthorize("hasRole('ADMIN')")
 	@PostMapping
 	public ResponseEntity<CollegeDto> create(@Valid @RequestBody CollegeDto dto){
+		System.out.println("I am college management");
 		return ResponseEntity.status(HttpStatus.CREATED)
 				.body(collegeService.createCollege(dto));
 				
